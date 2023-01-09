@@ -59,6 +59,9 @@ group :development, :test do
 
   # Use byebug for debugging
   gem "byebug", "~> 11.1", ">= 11.1.3"
+
+  # Use database_cleaner for cleaning up test data
+  gem "database_cleaner", "~> 2.0", ">= 2.0.1"
 end
 
 group :development do
