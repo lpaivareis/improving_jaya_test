@@ -26,7 +26,7 @@ RSpec.describe Webhooks::EventsController do
     end
 
     it "updates an existing issue" do
-      issue = FactoryBot.create(:issue, id: 1)
+      issue = create(:issue, id: 1)
       post webhooks_events_path(payload)
       issue.reload
       expect(issue.title).to eq("Issue title")
