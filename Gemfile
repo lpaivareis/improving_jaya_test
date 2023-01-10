@@ -65,6 +65,9 @@ group :development, :test do
 
   # Use shoulda-matchers for testing
   gem "shoulda-matchers", "~> 5.0"
+
+  # Use factory_bot_rails for testing
+  gem 'factory_bot_rails', '~> 6.2'
 end
 
 group :development do
