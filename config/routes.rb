@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
 
+  resources :issues, only: :index
+
   namespace :webhooks do
     resources :events, only: :create
   end
