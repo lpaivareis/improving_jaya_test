@@ -3,9 +3,9 @@
 module Webhooks
   class EventsController < ActionController::API
     def create
-      event = JSON.parse(event_params, symbolize_names: true, object_class: OpenStruct)
+      return head :bad_request if params[:issue].blank?
 
-      update_or_create_issue(event)
+      update_or_create_issue(event_params)
 
       head :ok
     end
@@ -16,25 +16,14 @@ module Webhooks
       @issue = Issue.find_by(id: event.number)
 
       if @issue.present?
-        @issue.update!(
-          status: event.state,
-          title: event.title,
-          description: event.body,
-          url: event.url
-        )
+        @issue.update(event_params.reject { |k,| k.number })
       else
-        @issue = Issue.create(
-          title: event.title,
-          status: event.state,
-          id: event.number,
-          description: event.body,
-          url: event.url
-        )
+        @issue = Issue.create(event_params)
       end
     end
 
     def event_params
-      params[:issue].to_json
+      params.require(:issue).permit(:number, :state, :title, :body, :url)
     end
   end
 end
