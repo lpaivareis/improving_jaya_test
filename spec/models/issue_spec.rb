@@ -5,18 +5,19 @@ require "rails_helper"
 RSpec.describe Issue do
   describe "validations" do
     it { is_expected.to validate_presence_of(:title) }
-    it { is_expected.to validate_presence_of(:description) }
-    it { is_expected.to validate_presence_of(:status) }
+    it { is_expected.to validate_presence_of(:body) }
+    it { is_expected.to validate_presence_of(:state) }
+    it { is_expected.to validate_presence_of(:url) }
   end
 
   describe "enums" do
-    describe "status" do
-      it "has open status" do
-        expect(build(:issue, status: :open)).to be_open
+    describe "state" do
+      it "has open state" do
+        expect(build(:issue, state: :open)).to be_open
       end
 
       it "has closed status" do
-        expect(build(:issue, status: :closed)).to be_closed
+        expect(build(:issue, state: :closed)).to be_closed
       end
     end
   end

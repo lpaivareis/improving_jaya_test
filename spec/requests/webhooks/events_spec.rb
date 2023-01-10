@@ -2,7 +2,7 @@
 
 require "rails_helper"
 
-RSpec.describe Webhooks::EventsController do
+RSpec.describe "Events" do
   describe "POST #create" do
     let(:payload) do
       {
@@ -12,6 +12,15 @@ RSpec.describe Webhooks::EventsController do
           body: "Issue body",
           state: "open",
           url: "www.example.com"
+        }
+      }
+    end
+
+    let(:payload_closed) do
+      {
+        issue: {
+          state: "closed",
+          number: 1
         }
       }
     end
@@ -27,12 +36,9 @@ RSpec.describe Webhooks::EventsController do
 
     it "updates an existing issue" do
       issue = create(:issue, id: 1)
-      post webhooks_events_path(payload)
+      post webhooks_events_path(payload_closed)
       issue.reload
-      expect(issue.title).to eq("Issue title")
-      expect(issue.description).to eq("Issue body")
-      expect(issue.status).to eq("open")
-      expect(issue.url).to eq("www.example.com")
+      expect(issue.state).to eq("closed")
     end
   end
 end

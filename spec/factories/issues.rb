@@ -3,11 +3,12 @@
 FactoryBot.define do
   factory :issue do
     title { Faker::Lorem.word }
-    description { Faker::Lorem.paragraph }
-    status { :open }
+    body { Faker::Lorem.paragraph }
+    state { :open }
+    url { Faker::Internet.url }
 
     trait :closed do
-      status { :closed }
+      state { :closed }
     end
   end
 end
