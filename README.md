@@ -59,6 +59,22 @@ Com isso a aplicação já deverá estar pronta para os testes no GitHub, mas ca
 
 ## Lista dos endpoints
 
-Listar issues: GET "/issues"
-Pegar uma issue pelo número: GET"/issues/:id" (ID é o mesmo número da issue)
-Webhook: POST "/webhooks/events"
+Listar issues:
+
+```
+GET "/issues"
+```
+
+Pegar uma issue pelo número:
+
+```
+GET"/issues/:id"
+```
+
+OBS: (ID é o mesmo número da issue)
+
+Webhook:
+
+```
+POST "/webhooks/events"
+```
