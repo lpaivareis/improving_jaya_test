@@ -56,3 +56,9 @@ Após a configuração na aplicação vá ate o repositório do GitHub e adicion
 ```
 
 Com isso a aplicação já deverá estar pronta para os testes no GitHub, mas caso tenha duvida sobre o processo de criação do webhook no GitHub o link a seguir pode te ajudar. [Docs de webhooks GitHub](https://developer.github.com/webhooks/)
+
+## Lista dos endpoints
+
+Listar issues: GET "/issues"
+Pegar uma issue pelo número: GET"/issues/:id" (ID é o mesmo número da issue)
+Webhook: POST "/webhooks/events"
