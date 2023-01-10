@@ -62,6 +62,9 @@ group :development, :test do
 
   # Use database_cleaner for cleaning up test data
   gem "database_cleaner", "~> 2.0", ">= 2.0.1"
+
+  # Use shoulda-matchers for testing
+  gem "shoulda-matchers", "~> 5.0"
 end
 
 group :development do
