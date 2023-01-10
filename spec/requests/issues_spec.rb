@@ -5,7 +5,7 @@ require "rails_helper"
 RSpec.describe "Issues" do
   describe "GET /index" do
     before do
-      create_list(:issue, 10)
+      FactoryBot.create_list(:issue, 10)
     end
 
     it "returns http success" do
