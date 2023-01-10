@@ -3,7 +3,7 @@ class CreateIssues < ActiveRecord::Migration[7.0]
     create_table :issues do |t|
       t.string :title
       t.text :description
-      t.string :status
+      t.string :state
       t.string :url
 
       t.timestamps

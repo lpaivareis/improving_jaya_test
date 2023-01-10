@@ -3,7 +3,7 @@
 class Issue < ApplicationRecord
   validates :title, :status, :description, presence: true
 
-  enum status: {
+  enum state: {
     open: "open",
     closed: "closed"
   }
