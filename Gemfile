@@ -73,7 +73,7 @@ group :development, :test do
   gem "faker", "~> 3.1"
 
   # Use aewsome_print for debugging
-  gem 'awesome_print', '~> 1.9', '>= 1.9.2'
+  gem "awesome_print", "~> 1.9", ">= 1.9.2"
 end
 
 group :development do

@@ -12,11 +12,11 @@ RSpec.describe Issue do
   describe "enums" do
     describe "status" do
       it "has open status" do
-        expect(FactoryBot.build(:issue, status: :open)).to be_open
+        expect(build(:issue, status: :open)).to be_open
       end
 
       it "has closed status" do
-        expect(FactoryBot.build(:issue, status: :closed)).to be_closed
+        expect(build(:issue, status: :closed)).to be_closed
       end
     end
   end

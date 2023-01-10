@@ -1,9 +1,11 @@
-require 'rails_helper'
+# frozen_string_literal: true
 
-RSpec.describe "Issues", type: :request do
+require "rails_helper"
+
+RSpec.describe "Issues" do
   describe "GET /index" do
     before do
-      FactoryBot.create_list(:issue, 10)
+      create_list(:issue, 10)
     end
 
     it "returns http success" do
