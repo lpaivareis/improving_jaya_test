@@ -4,6 +4,7 @@ class CreateIssues < ActiveRecord::Migration[7.0]
       t.string :title
       t.text :description
       t.string :status
+      t.string :url
 
       t.timestamps
     end
