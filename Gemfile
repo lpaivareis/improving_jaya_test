@@ -68,6 +68,9 @@ group :development, :test do
 
   # Use factory_bot_rails for testing
   gem "factory_bot_rails", "~> 6.2"
+
+  # Use faker for testing
+  gem "faker", "~> 3.1"
 end
 
 group :development do
